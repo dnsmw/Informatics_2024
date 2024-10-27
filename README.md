@@ -26,5 +26,5 @@
 ```
 
 ```python
-print("Hello world")
+print("Сергеев Данила Владимирович")
 ```
