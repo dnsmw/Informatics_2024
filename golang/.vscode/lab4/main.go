@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.PrintIn("Hello world")
+	fmt.PrintIn("Сергеев Данила Владимирович")
 
 	lab4.Calculate(a, b, x)
 }

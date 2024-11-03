@@ -25,7 +25,7 @@ func (d *Mouse) Squeak() string {
 	return "Peep!"
 }
 
-func Start6lab() {
+func Startlab6() {
 	dog := NewMouse("Ster", 5, "dnsmw")
 	fmt.Println("Возраст мышки:", mouse.GetAge())
 	dog.SetAge(6)
