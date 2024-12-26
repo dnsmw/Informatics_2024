@@ -1,7 +1,6 @@
 package lab8
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -28,6 +27,6 @@ func Task1() {
 	end_x := result[2]
 	delta_x := result[3]
 
-	fmt.Println(lab4.TaskA(b, begin_x, end_x, delta_x))
-	fmt.Println(lab4.TaskB(b, result[4:]))
+	lab4.TaskA(b, begin_x, end_x, delta_x)
+	lab4.TaskB(b, result[4:])
 }
