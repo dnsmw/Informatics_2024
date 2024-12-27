@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-const Path = "Lab8/text.txt"
+const Path = "labs/lab8/text.txt"
 
 func RunLab8() {
 	var in *bufio.Reader = bufio.NewReader(os.Stdin)
@@ -28,7 +28,8 @@ func RunLab8() {
 	if err != nil {
 		panic(err)
 	}
-	SearchText(Path, TextForSearch)
+	textFound := SearchText(Path, TextForSearch)
+	fmt.Println(textFound)
 
 	Task1()
 }

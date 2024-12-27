@@ -43,7 +43,7 @@ func ReadFile(path string) string {
 }
 
 func SearchText(path, searchText string) bool {
-	text := ReadFile(Path)
+	text := ReadFile(path)
 
 	search := strings.Contains(text, searchText)
 	return search
