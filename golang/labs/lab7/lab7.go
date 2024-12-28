@@ -31,12 +31,3 @@ func Lab7() {
 	PC1.SetRAM(60)
 	Laptop1.SetROM(150)
 }
-
-func GetTotalPrice(ProductsList []Product) float64 {
-	var defoultCost float64
-
-	for _, product := range ProductsList {
-		defoultCost += product.GetPrice()
-	}
-	return defoultCost
-}

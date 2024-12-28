@@ -1,6 +1,7 @@
 package lab8
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -10,7 +11,10 @@ import (
 const PathTask1 = "labs/lab8/input.txt"
 
 func Task1() {
-	text := ReadFile(PathTask1)
+	text, err := ReadFile(PathTask1)
+	if err != nil {
+		panic(err)
+	}
 
 	var result []float64
 	Parameters := strings.Split(text, "\n")
@@ -27,6 +31,17 @@ func Task1() {
 	end_x := result[2]
 	delta_x := result[3]
 
-	lab4.TaskA(b, begin_x, end_x, delta_x)
-	lab4.TaskB(b, result[4:])
+	fmt.Println("Значение A:")
+	resultA := lab4.TaskA(b, begin_x, end_x, delta_x)
+
+	for _, y := range resultA {
+		fmt.Printf("y: %.4f\n", y)
+	}
+
+	fmt.Println("\nЗначение B:")
+	resultB := lab4.TaskB(b, result[4:])
+
+	for _, y := range resultB {
+		fmt.Printf("y: %.4f\n", y)
+	}
 }

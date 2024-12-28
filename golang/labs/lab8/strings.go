@@ -6,27 +6,29 @@ import (
 	"strings"
 )
 
-func CreateFile(path string) {
+func CreateFile(path string) error {
 	file, err := os.Create(path)
 	if err != nil {
-		panic(err)
+		return err
 	}
 	file.Close()
+	return nil
 }
 
-func WriteFile(path, text string) {
+func WriteFile(path, text string) error {
 	file, err := os.OpenFile(path, os.O_WRONLY, 0666)
 	if err != nil {
-		panic(err)
+		return err
 	}
 	defer file.Close()
 	file.WriteString(text)
+	return nil
 }
 
-func ReadFile(path string) string {
+func ReadFile(path string) (string, error) {
 	file, err := os.Open(path)
 	if err != nil {
-		return ""
+		return "", err
 	}
 	defer file.Close()
 
@@ -39,12 +41,15 @@ func ReadFile(path string) string {
 		}
 		text = string(data[:n])
 	}
-	return text
+	return text, nil
 }
 
-func SearchText(path, searchText string) bool {
-	text := ReadFile(path)
+func SearchText(path, searchText string) (bool, error) {
+	text, err := ReadFile(path)
+	if err != nil {
+		return false, err
+	}
 
 	search := strings.Contains(text, searchText)
-	return search
+	return search, nil
 }
